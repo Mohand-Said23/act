@@ -1,1 +1,5 @@
-print("Bonjour,  je m'appel toto")
+def piramide(n = 10):
+    for i in range(n):
+        print("-"*i)
+
+piramide()
