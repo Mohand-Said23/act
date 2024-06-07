@@ -1,4 +1,27 @@
-git add .github/workflows/ci.yml
-git commit -m "Ajout du workflow CI"
-git push origin main
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Utilisation de Ubuntu
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: python build.py install_dependencies
+
+    - name: Run tests
+      run: python build.py run_tests
 
