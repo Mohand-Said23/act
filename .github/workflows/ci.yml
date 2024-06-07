@@ -1,3 +1,4 @@
 git add .github/workflows/ci.yml
-git commit -m "Ajout du workflows CI"
+git commit -m "Ajout du workflow CI"
 git push origin main
+
